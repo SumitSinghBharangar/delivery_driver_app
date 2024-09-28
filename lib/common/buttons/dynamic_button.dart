@@ -43,7 +43,7 @@ class DynamicButton extends StatefulWidget {
         style: TextStyle(
           fontSize: 16,
           fontWeight: FontWeight.bold,
-          color: textColor ?? Colors.purple,
+          color: textColor,
         ),
       ),
     );

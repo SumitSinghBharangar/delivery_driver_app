@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:iconsax/iconsax.dart';
+
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:vehicle_app/common/buttons/dynamic_button.dart';
 import 'package:vehicle_app/common/buttons/scale_button.dart';
 
 import 'package:vehicle_app/features/auth/screens/onbording_screens/page1.dart';
-import 'package:vehicle_app/features/language/select_language_screen.dart';
+
 import 'package:vehicle_app/features/utils/utils.dart';
+
+import '../../../language/language_screen.dart';
 
 class OnBordringScreen extends StatefulWidget {
   const OnBordringScreen({super.key});
