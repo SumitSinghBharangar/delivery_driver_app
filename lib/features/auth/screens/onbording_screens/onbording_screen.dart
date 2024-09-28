@@ -5,8 +5,9 @@ import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 import 'package:vehicle_app/common/buttons/dynamic_button.dart';
 import 'package:vehicle_app/common/buttons/scale_button.dart';
+import 'package:vehicle_app/common/components/laguage_button.dart';
 
-import 'package:vehicle_app/features/auth/screens/onbording_screens/page1.dart';
+import 'package:vehicle_app/features/auth/screens/onbording_screens/onbordingpage.dart';
 
 import 'package:vehicle_app/features/utils/utils.dart';
 
@@ -47,7 +48,7 @@ class _OnBordringScreenState extends State<OnBordringScreen> {
               physics: const NeverScrollableScrollPhysics(),
               scrollDirection: Axis.horizontal,
               children: const [
-                Screen1(
+                OnBoardPage(
                   decoration: BoxDecoration(
                     gradient: LinearGradient(
                       colors: [
@@ -63,7 +64,7 @@ class _OnBordringScreenState extends State<OnBordringScreen> {
                   text2: "plus additional joining and\nreferral incentives",
                   imageaddress: "assets/images/money.png",
                 ),
-                Screen1(
+                OnBoardPage(
                   color: Colors.orange,
                   text1: "We care for\nyour safety!",
                   text2:
@@ -77,7 +78,7 @@ class _OnBordringScreenState extends State<OnBordringScreen> {
                     ),
                   ),
                 ),
-                Screen1(
+                OnBoardPage(
                   color: Colors.red,
                   text1: "Work within\nyour own area",
                   text2:
@@ -91,7 +92,7 @@ class _OnBordringScreenState extends State<OnBordringScreen> {
                     ),
                   ),
                 ),
-                Screen1(
+                OnBoardPage(
                   color: Colors.green,
                   text1: "No vechicle?\nNo problem.",
                   text2: "Get free vehicle assistence\nfrom Zepto",
@@ -110,38 +111,7 @@ class _OnBordringScreenState extends State<OnBordringScreen> {
           Positioned(
             top: 50.h,
             right: 20.w,
-            child: ScaleButton(
-              scale: 0.98,
-              onTap: () {
-                Utils.go(
-                    context: context,
-                    screen: const LanguageSelectionScreen(),
-                    replace: false);
-              },
-              child: Container(
-                decoration: BoxDecoration(
-                  border: Border.all(width: 1, color: Colors.white),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                padding: EdgeInsetsDirectional.symmetric(
-                    vertical: 5.h, horizontal: 15.w),
-                child: Row(
-                  children: [
-                    const Icon(
-                      Icons.g_translate_sharp,
-                      color: Colors.white,
-                    ),
-                    SizedBox(
-                      width: 2.w,
-                    ),
-                    const Text(
-                      "English",
-                      style: TextStyle(color: Colors.white),
-                    ),
-                  ],
-                ),
-              ),
-            ),
+            child: const LaguageButton(),
           ),
           Positioned(
             bottom: 30,

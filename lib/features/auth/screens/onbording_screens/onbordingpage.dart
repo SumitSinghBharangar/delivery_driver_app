@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:iconsax/iconsax.dart';
 
-class Screen1 extends StatelessWidget {
+class OnBoardPage extends StatelessWidget {
   final Color color;
   final BoxDecoration decoration;
   final String text1;
   final String text2;
   final String imageaddress;
-  const Screen1({
+  const OnBoardPage({
     super.key,
     required this.decoration,
     required this.color,
