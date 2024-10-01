@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:vehicle_app/common/buttons/dynamic_button.dart';
 import 'package:vehicle_app/common/components/custom_textfield.dart';
 import 'package:vehicle_app/common/components/laguage_button.dart';
+import 'package:vehicle_app/features/auth/screens/otp_screen.dart';
+import 'package:vehicle_app/features/utils/utils.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -12,6 +15,8 @@ class LoginScreen extends StatefulWidget {
 
 class _LoginScreenState extends State<LoginScreen> {
   final TextEditingController _phone = TextEditingController();
+  bool isFieldValidate = false;
+
 
   @override
   void dispose() {
@@ -21,6 +26,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   @override
   Widget build(BuildContext context) {
+    
     return Scaffold(
       body: Stack(
         children: [
@@ -103,7 +109,17 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                     ],
                   ),
-                )
+                ),
+                SizedBox(height: 5.h,),
+                DynamicButton.fromText(
+                  color: isFieldValidate ? Colors.grey : Colors.purple,
+                  textColor: isFieldValidate ? Colors.white : Colors.grey,
+                  text: "Get OTP",
+                   onPressed: (){
+                    if(isFieldValidate){
+                      Utils.go(context: context, screen: const OtpScreen());
+                    }
+                })
               ],
             ),
           ))
